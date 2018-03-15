@@ -1,0 +1,37 @@
+
+
+        <input type="text" ng-model="name"/>
+        
+        <div> {{name}}</div>
+        <div ng-bind="name"></div>
+        
+        <div ng-init="language='AngularJS'"><!--Init some value -->
+        Your language + <input type="text" ng-model="language"/> {{language}}
+        </div>
+        
+        <!-- Looping in html/angular-->
+        <div ng-init="myArray=
+                      [{small:'first',caps:'FIRST'},
+                      {small:'second',caps:'SECOND'}
+                      ]">
+            <p ng-repeat="x in myArray">
+            {{x.small}}
+            {{x.caps}}          
+            </p>        
+        </div>
+        
+        <!--function calling to ng-controller -->
+        <div ng-controller="testController">
+             Select your favourite language: 
+            <button ng-click="php()">PHP</button>
+            <button ng-click="java()">JAVA</button>
+            <button ng-click="cpp()">C++</button>
+            <p>You have Selected {{myFavLanguage}}</p>
+        </div>
+        
+        
+        <input type="test" ng-model="name"><br>
+        {{'Welcome ' + name | uppercase}}
+
+
+      

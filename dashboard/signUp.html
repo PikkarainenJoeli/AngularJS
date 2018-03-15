@@ -1,0 +1,17 @@
+<div ng-controller="signUpController">
+Create New User
+    <form action="/" id="mySignUp">
+
+            <input type ="text"rows="1" name="username" placeholder="Username" ng-model="username"></input><br>
+    
+            <input type="password"rows="1" name="password1" placeholder="Password" ng-model="password1"></input><br>
+
+            <input type="password"rows="1" name="password2" placeholder="Password" ng-model="password2"></input><br>
+
+            <button type="button" ng-click="submitNewUser()">Sign Up</button><br>
+
+        </form>
+
+    <text ng-model="clientlog">{{userLogSignUp}}</text>
+
+</div>
