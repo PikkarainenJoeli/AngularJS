@@ -25,8 +25,19 @@ logbook.config(function($routeProvider){
    })
     
     .when('/indexSecure',{               
-                templateUrl: 'indexSecure.html'            
-   })
+                //templateUrl: 'indexSecure.html'  
+       resolve: {
+			check: function($location, user) {
+                console.log(user.isUserLoggedIn());
+				if(!user.isUserLoggedIn()) {
+					$location.path('/login');
+				}
+			},
+		},
+		templateUrl: 'indexSecure.html'
+		
+	})
+
     
     .when('/signUp',{               
                 templateUrl: 'signUp.html'            
@@ -65,9 +76,9 @@ logbook.service('user',function(){
     };
     
     this.userLoggedOut = function(){
-        this.username = null;
-        this.id = null;
-        this.loggedin = false;
+        username = null;
+        id = null;
+        loggedin = false;
         console.log("Logged out");
     };
     
